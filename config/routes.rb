@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  post 'milestones/create'
+
+  put 'milestones/update'
+
+  delete 'milestones/destroy'
+
+  post 'goals/create'
+
+  delete 'goals/destroy'
+
   get 'home/index'
 
   devise_for :users, controllers: { sessions: "users/sessions" }
