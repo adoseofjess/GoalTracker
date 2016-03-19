@@ -1,3 +1,15 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to('Create goal', goals_create_path(goal: {title: "Test Goal"}), :method => :post) %>
+<% if current_user %>
+	<%= link_to('Create goal', goals_create_path(goal: {title: "Test Goal", user_id: current_user.id}), :method => :post) %>
+
+	<%= react_component('GoalForm', userId: current_user.id) %>
+
+Myself:
+	<%= current_user %>
+
+	My goals:
+	<% @goals.each do |goal| %>
+		<%= react_component('Goal', title: goal.title) %>
+	<% end %>
+<% else %>
+	No current user. Please log in!
+<% end %>

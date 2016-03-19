@@ -1,9 +1,8 @@
 class GoalsController < ApplicationController
   def create
     @goal = Goal.new(goal_params)
-		p goal_params
-		p @goal
     @goal.save
+		redirect_to(:back)
   end
 
   def destroy
@@ -12,7 +11,6 @@ class GoalsController < ApplicationController
   private
 
   def goal_params
-    p params
-	  params.require(:goal).permit(:title)
+	  params.require(:goal).permit(:title, :user_id)
   end
 end
