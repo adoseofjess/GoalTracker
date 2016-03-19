@@ -12,10 +12,10 @@ class GoalForm extends React.Component {
 
 	handleSubmit(e) {
 		$.ajax({
-			url: "/goals/create.json",
+			url: "/goals.json",
 			type: "POST",
 			data: {"goal": {"title": this.state.title, "user_id": this.props.userId}},
-			dataType: "json",
+			dataType: "html",
 			success: function(data) {console.log('success');},
 			error: function(xhr, status, err) {console.log(err);}
 		});

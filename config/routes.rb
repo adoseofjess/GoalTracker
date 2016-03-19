@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  post 'milestones/create'
+  resources :milestones
+	resources :goals
+	
+	#post 'milestones/create'
 
-  put 'milestones/update'
+  #put 'milestones/update'
 
-  delete 'milestones/destroy'
+  #delete 'milestones/destroy'
 
-  post 'goals/create'
+  #post 'goals/create'
 
-  delete 'goals/destroy'
+  #delete 'goals/destroy'
 
   get 'home/index'
 

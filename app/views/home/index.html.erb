@@ -1,5 +1,5 @@
 <% if current_user %>
-	<%= link_to('Create goal', goals_create_path(goal: {title: "Test Goal", user_id: current_user.id}), :method => :post) %>
+	<%= link_to('Create goal', goals_path(goal: {title: "Test Goal", user_id: current_user.id}), :method => :post) %>
 
 	<%= react_component('GoalForm', userId: current_user.id) %>
 
@@ -8,7 +8,7 @@ Myself:
 
 	My goals:
 	<% @goals.each do |goal| %>
-		<%= react_component('Goal', title: goal.title) %>
+		<%= react_component('Goal', title: goal.title, id: goal.id) %>
 	<% end %>
 <% else %>
 	No current user. Please log in!

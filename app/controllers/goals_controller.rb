@@ -6,6 +6,8 @@ class GoalsController < ApplicationController
   end
 
   def destroy
+		Goal.find(params[:id]).destroy
+		redirect_to(:back, status: 303)
   end
 
   private
