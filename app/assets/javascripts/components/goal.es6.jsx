@@ -5,8 +5,6 @@ class Goal extends React.Component {
 	}
 
 	handleClick (e) {
-		console.log("click");
-		e.preventDefault();
 		$.ajax({
 		  url: "/goals/" + this.props.id + ".json",
 			type: "DELETE",
@@ -19,9 +17,25 @@ class Goal extends React.Component {
   render () {
     return (
       <div>
-        <div>Title: {this.props.title}</div>
-				<a href="#" onClick={this.handleClick}>Delete Goal</a>
-      </div>
+
+<div className="container">
+	<div className="row">	
+    <div>Title: {this.props.title}</div>
+	</div>
+	<div className="row">	
+		<a href="#" onClick={this.handleClick}>Delete Goal</a>
+	</div>
+	<div className="row">
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+  	<div className="col-md-1">.col-md-6</div>
+	</div>
+</div>      
+			</div>
     );
   }
 }

@@ -9,6 +9,8 @@ Myself:
 	My goals:
 	<% @goals.each do |goal| %>
 		<%= react_component('Goal', title: goal.title, id: goal.id) %>
+
+		<%= react_component('Calendar', milestones: goal.milestones) %>
 	<% end %>
 <% else %>
 	No current user. Please log in!
